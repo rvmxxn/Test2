@@ -51,6 +51,35 @@ def load_single_pbl(folder, filename):
         st.error(f"Error reading {filename}: {e}")
         return None
 
+# --- Layout Rendering Helper ---
+def render_pbl_block(pbl):
+    st.header(pbl.get("title", "Unnamed Case Study"))
+    col1, col2 = st.columns([3, 2], gap="large")
+    
+    with col1:
+        if "details" in pbl and pbl["details"]:
+            st.markdown("### 🩺 Clinical Presentation")
+            st.table(pbl["details"])
+            
+        if "diagram" in pbl and pbl["diagram"].strip():
+            st.markdown("### 🔄 Pathophysiology / Management Map")
+            st.graphviz_chart(pbl["diagram"])
+            
+    with col2:
+        st.markdown("### 🧠 Viva Preparation")
+        if "viva" in pbl and pbl["viva"]:
+            for idx, qa in enumerate(pbl["viva"]):
+                with st.expander(f"💬 Q{idx+1}: {qa['q']}", expanded=False):
+                    st.markdown(f"**Answer:**\n{qa['a']}")
+        else:
+            st.write("*No assessment criteria configured for this profile.*")
+            
+        st.markdown("---")
+        if "pearl" in pbl and pbl["pearl"].strip():
+            st.warning(f"💡 **Clinical Pearl:**\n\n{pbl['pearl']}")
+            
+    st.markdown("<br><hr style='border:1px dashed #444;'><br>", unsafe_allowed_html=True)
+
 # --- Sidebar UI ---
 st.sidebar.title("📚 MBBS PBL Dashboard")
 st.sidebar.markdown("---")
@@ -110,32 +139,3 @@ else:
     st.warning(f"No active case JSON files found inside the directory: `Data/{target_folder}/` yet.")
 
 
-# --- Layout Rendering Helper ---
-def render_pbl_block(pbl):
-    st.header(pbl.get("title", "Unnamed Case Study"))
-    col1, col2 = st.columns([3, 2], gap="large")
-    
-    with col1:
-        if "details" in pbl and pbl["details"]:
-            st.markdown("### 🩺 Clinical Presentation")
-            st.table(pbl["details"])
-            
-        if "diagram" in pbl and pbl["diagram"].strip():
-            st.markdown("### 🔄 Pathophysiology / Management Map")
-            st.graphviz_chart(pbl["diagram"])
-            
-    with col2:
-        st.markdown("### 🧠 Viva Preparation")
-        if "viva" in pbl and pbl["viva"]:
-            for idx, qa in enumerate(pbl["viva"]):
-                with st.expander(f"💬 Q{idx+1}: {qa['q']}", expanded=False):
-                    st.markdown(f"**Answer:**\n{qa['a']}")
-        else:
-            st.write("*No assessment criteria configured for this profile.*")
-            
-        st.markdown("---")
-        if "pearl" in pbl and pbl["pearl"].strip():
-            st.warning(f"💡 **Clinical Pearl:**\n\n{pbl['pearl']}")
-            
-    st.markdown("<br><hr style='border:1px dashed #444;'><br>", unsafe_allowed_html=True)
-u
