@@ -1,0 +1,58 @@
+{
+  "title": "PBL 2 – Disturbed Married Life (Turner Syndrome 45,X)",
+  "details": {
+    "Clinical Presentation": [
+      "Primary amenorrhea (never bled)",
+      "Short stature (4.5 ft) via SHOX gene",
+      "Webbed neck & broad/shield chest",
+      "Cubitus valgus & excessive nevi",
+      "Absent Barr body on buccal smear"
+    ],
+    "Investigations & Labs": [
+      "FSH: 68.28 mIU/L (Very High)",
+      "LH: 35.50 mIU/L (High)",
+      "Estradiol: 6.8 pg/mL (Very Low)",
+      "Ultrasound: Streak ovaries",
+      "Karyotype confirms 45,X"
+    ],
+    "Management & Ethics": [
+      "Ethinyl Estradiol (induces puberty)",
+      "Medroxyprogesterone (protects endometrium)",
+      "Calcium + Vitamin D3 (bone protection)",
+      "Counseling: Surrogacy/Adoption",
+      "Ethics: Patient confidentiality vs Spousal disclosure"
+    ]
+  },
+  "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#2a9d8f\", fontcolor=white]; Monosomy_X [label=\"Monosomy X (45,X)\"]; Oocyte_Atresia [label=\"Accelerated Oocyte Atresia\"]; Streak_Ovaries [label=\"Streak Ovaries\"]; Low_Estrogen [label=\"No Estrogen Production\"]; High_FSH [label=\"Loss of Negative Feedback \\n High FSH & LH\"]; Amenorrhea [label=\"Primary Amenorrhea\"]; Infertility [label=\"Infertility\"]; Monosomy_X -> Oocyte_Atresia; Oocyte_Atresia -> Streak_Ovaries; Streak_Ovaries -> Low_Estrogen; Low_Estrogen -> High_FSH; Low_Estrogen -> Amenorrhea; Low_Estrogen -> Infertility; }",
+  "viva": [
+    {
+      "q": "What is the diagnosis in this case? Give reasons.",
+      "a": "Turner Syndrome (45,X). Key evidence: Primary amenorrhea, short stature, webbed neck, shield chest, cubitus valgus, streak ovaries on USS, very high FSH & LH (hypergonadotropic hypogonadism), very low estradiol, absent Barr body on buccal smear."
+    },
+    {
+      "q": "Why are FSH and LH elevated in this patient?",
+      "a": "Streak ovaries produce no estrogen. Estrogen normally exerts negative feedback on the hypothalamus and anterior pituitary. Without estrogen, there is no negative feedback → GnRH keeps being released → FSH and LH remain elevated (hypergonadotropic state)."
+    },
+    {
+      "q": "What is a Barr body and what is its significance here?",
+      "a": "A Barr body is the inactivated X chromosome (heterochromatin) visible at the periphery of the nucleus. Number of Barr bodies = Number of X chromosomes − 1. In Turner syndrome (45,X): only one X → no inactivation needed → 0 Barr bodies. Absent Barr body confirms 45,X karyotype."
+    },
+    {
+      "q": "Why is the uterus present if she has no functional ovaries?",
+      "a": "The uterus is derived from Müllerian ducts. Müllerian ducts regress only in the presence of Müllerian Inhibiting Factor (MIF/AMH) secreted by fetal testes. In Turner syndrome, there are no functional testes → no MIF → Müllerian ducts develop normally → uterus and fallopian tubes are present."
+    },
+    {
+      "q": "What is the rationale for prescribing Ethinyl Estradiol and Progesterone?",
+      "a": "Ethinyl Estradiol replaces absent ovarian estrogen to induce secondary sexual characteristics and protect bone density. Medroxyprogesterone is added sequentially to induce secretory transformation of the endometrium and then a withdrawal bleed, protecting against estrogen-induced endometrial carcinoma."
+    },
+    {
+      "q": "What is the SHOX gene and its role in Turner syndrome?",
+      "a": "SHOX (Short Stature Homeobox) gene is located on the pseudoautosomal region of the X chromosome. It regulates skeletal growth. In Turner syndrome, SHOX haploinsufficiency causes short stature and skeletal anomalies (cubitus valgus)."
+    },
+    {
+      "q": "What is the ethical tension in this case regarding her request for confidentiality?",
+      "a": "The tension lies between the patient's right to autonomy and confidentiality versus the husband's right to know, as it affects his reproductive choices. The resolution is to respect confidentiality while gently counseling the patient on the importance of disclosure with her husband's support."
+    }
+  ],
+  "pearl": "Turner's WEBBING Mnemonic: Webbed neck, Estrogen deficiency, Broad chest, Barr body absent, Infertility, Nevi, Gonadotropins HIGH. \n\nRemember: HIGH FSH + HIGH LH + VERY LOW Estradiol = Primary Ovarian Failure."
+}
