@@ -1,0 +1,142 @@
+{
+  "pbls": [
+    {
+      "title": "PBL 2 – Erb's Palsy (Upper Brachial Plexus Injury)",
+      "details": {
+        "Clinical Presentation": [
+          "50M, Road traffic accident",
+          "Arm adducted, medially rotated",
+          "Elbow extended, forearm pronated, wrist flexed",
+          "Sensory loss on lateral aspect of forearm"
+        ],
+        "Investigations": [
+          "Serum Vitamin D3: 9 ng/mL (Severely deficient)",
+          "Serum Calcium: 9.0 mg/dL (Normal due to secondary hyperparathyroidism)",
+          "X-ray Chest & Left Shoulder: Rule out fractures/pneumothorax"
+        ],
+        "Management": [
+          "Inj Ketorolac 30mg IM (Acute analgesia)",
+          "Cap Cholecalciferol 200,000 IU/week (Stoss therapy for Vit D)",
+          "Shoulder sling & early physiotherapy"
+        ]
+      },
+      "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#7C3AED\", fontcolor=white]; Traction [label=\"Lateral Neck Traction\"]; UpperTrunk [label=\"Upper Trunk (C5, C6) Tear\\nat Erb's Point\"]; LossAbduction [label=\"Loss of Deltoid & Supraspinatus\\n(Arm Adducted)\"]; LossRotation [label=\"Loss of Infraspinatus\\n(Medially Rotated)\"]; LossFlexion [label=\"Loss of Biceps\\n(Extended & Pronated)\"]; Traction -> UpperTrunk; UpperTrunk -> LossAbduction; UpperTrunk -> LossRotation; UpperTrunk -> LossFlexion; }",
+      "viva": [
+        {
+          "q": "What is Erb's point and why is it vulnerable?",
+          "a": "It is the junction of the C5 and C6 nerve roots, located just above the midpoint of the clavicle. It is vulnerable because it is superficial, relatively fixed, and the leverage of traction on the upper trunk is maximal here during lateral neck stretching."
+        },
+        {
+          "q": "Why does the arm adopt the 'waiter's tip' posture?",
+          "a": "It is caused by the unopposed action of antagonistic muscles due to the loss of: deltoid and supraspinatus (abductors) causing adduction; infraspinatus and teres minor (lateral rotators) causing medial rotation; and biceps (flexor and supinator) causing extension and pronation."
+        },
+        {
+          "q": "What remains intact in Erb's Palsy and why?",
+          "a": "Hand grip, intrinsic hand muscles (C8, T1 — ulnar/median), wrist extension (C7 — radial nerve), and finger movements remain intact because these lower roots are unaffected in an upper plexus injury."
+        },
+        {
+          "q": "Classify the nerve injury in Erb's Palsy (Seddon classification).",
+          "a": "It is most likely Axonotmesis: the axon is disrupted but the endoneurium remains intact. This is typical of traction injuries and allows for guided regeneration at about 1mm/day."
+        },
+        {
+          "q": "Why is serum calcium normal despite severe Vitamin D deficiency?",
+          "a": "Secondary hyperparathyroidism. Low Vitamin D leads to increased PTH secretion, which stimulates bone resorption and renal calcium reabsorption, maintaining serum calcium levels at the cost of bone density."
+        }
+      ],
+      "pearl": "Waiter's Tip Posture = C5/C6 Injury. Remember that hand grip and wrist extension are SPARED in isolated Erb's Palsy."
+    },
+    {
+      "title": "PBL 3 – Acute Compartment Syndrome",
+      "details": {
+        "Clinical Presentation": [
+          "35M, Post-supracondylar fracture reduction with cast",
+          "Severe right forearm pain",
+          "Dusky white hand appearance",
+          "Numbness over medial 1½ digits"
+        ],
+        "Investigations": [
+          "Compartment Pressure: Clinical diagnosis (>30 mmHg is critical)",
+          "Capillary Refill: Delayed (>2 seconds)",
+          "Pulses: Radial and ulnar impalpable"
+        ],
+        "Management": [
+          "IMMEDIATE cast removal",
+          "Limb elevation to heart level (do not elevate above)",
+          "Inj Diclofenac Sodium 75mg IM (Analgesia)",
+          "Fasciotomy if pressure remains critical"
+        ]
+      },
+      "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#DC2626\", fontcolor=white]; Cast [label=\"Tight Plaster Cast\"]; Venous [label=\"Venous Outflow Obstruction\"]; Edema [label=\"Tissue Edema & Swelling\"]; Pressure [label=\"Compartment Pressure >30 mmHg\"]; Arterial [label=\"Arterial Inflow Compromise\"]; Ischemia [label=\"Ischemia & Necrosis\\n(Volkmann's Contracture)\"]; Cast -> Venous; Venous -> Edema; Edema -> Pressure; Pressure -> Arterial; Arterial -> Ischemia; }",
+      "viva": [
+        {
+          "q": "Explain the vicious cycle of acute compartment syndrome.",
+          "a": "A tight cast or swelling increases compartment pressure, causing venous occlusion. This raises hydrostatic pressure, causing more edema, which further raises compartment pressure. Eventually, arterial inflow is compromised, leading to ischemia, anaerobic metabolism, and even more edema."
+        },
+        {
+          "q": "Why is there medial hand numbness specifically?",
+          "a": "The ulnar nerve (C8, T1) runs in the posterior compartment of the arm, passes posterior to the medial epicondyle, and supplies the medial 1½ digits. Raised compartment pressure compresses this nerve."
+        },
+        {
+          "q": "What is Volkmann's ischemic contracture?",
+          "a": "It is the end result of untreated forearm compartment syndrome. Ischemic muscle necrosis is replaced by fibrous scar tissue, leading to a fixed flexion contracture of the wrist and fingers. It is irreversible."
+        },
+        {
+          "q": "Why is the brachial artery specifically vulnerable in supracondylar fractures?",
+          "a": "The brachial artery passes anterior to the elbow joint, directly in front of the supracondylar region. Displaced bone fragments can lacerate, compress, or cause spasm of the artery."
+        },
+        {
+          "q": "Distinguish medical negligence from medical error in this case.",
+          "a": "A medical error is an unintended mistake (e.g., casting slightly too tight). Negligence is a breach of duty below the standard of care (e.g., failing to monitor neurovascular status or sending the patient home without instructions on warning signs)."
+        }
+      ],
+      "pearl": "The 5 Ps of Compartment Syndrome: Pain (out of proportion/on passive stretch), Pallor, Pulselessness, Paresthesia, Paralysis. Immediate cast removal is the definitive first step."
+    },
+    {
+      "title": "PBL 4 – Carpal Tunnel Syndrome",
+      "details": {
+        "Clinical Presentation": [
+          "40F, Worsening numbness/tingling over lateral 3½ digits",
+          "Night pain radiating from wrist to forearm",
+          "Weakness of thumb abduction, opposition, and flexion",
+          "Decreased thenar bulk (wasting)",
+          "Intact thenar eminence sensation"
+        ],
+        "Investigations": [
+          "Nerve Conduction Studies (Gold Standard)",
+          "Phalen's Test: Positive (reproduces symptoms at 60s)",
+          "Tinel's Sign: Positive (tingling upon percussion)"
+        ],
+        "Management": [
+          "Wrist splinting (nocturnal)",
+          "Activity modification (ergonomics)",
+          "Corticosteroid injection (local)",
+          "Carpal tunnel decompression surgery (Definitive)"
+        ]
+      },
+      "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#059669\", fontcolor=white]; Repetitive [label=\"Repetitive Wrist Motion\\n(Typing)\"]; Pressure [label=\"Increased Pressure in\\nCarpal Tunnel\"]; Demyelination [label=\"Focal Demyelination of\\nMedian Nerve\"]; Sensory [label=\"Paresthesia in\\nLateral 3.5 Digits\"]; AxonalLoss [label=\"Axonal Loss\"]; Motor [label=\"LOAF Muscle Weakness &\\nThenar Wasting\"]; Repetitive -> Pressure; Pressure -> Demyelination; Demyelination -> Sensory; Pressure -> AxonalLoss; AxonalLoss -> Motor; }",
+      "viva": [
+        {
+          "q": "What are the boundaries and contents of the carpal tunnel?",
+          "a": "The floor and sides are formed by the carpal bones. The roof is the flexor retinaculum. It contains 9 tendons (4 FDS, 4 FDP, 1 FPL) and 1 nerve (the median nerve). The ulnar nerve is NOT in the carpal tunnel."
+        },
+        {
+          "q": "Why does CTS NOT affect thenar eminence sensation?",
+          "a": "The palmar cutaneous branch of the median nerve arises about 5 cm proximal to the flexor retinaculum and passes superficial to it. Since it bypasses the carpal tunnel entirely, it is spared during compression."
+        },
+        {
+          "q": "What are the LOAF muscles?",
+          "a": "Lateral 2 lumbricals (flex MCPJs, extend IPJs), Opponens pollicis (opposition), Abductor pollicis brevis (abduction), and Flexor pollicis brevis superficial head (flexion). All are supplied by the median nerve."
+        },
+        {
+          "q": "Why are symptoms worse at night?",
+          "a": "A supine posture increases venous pressure, causing edema in the tunnel. Additionally, the wrist naturally tends to flex during sleep, which mechanically narrows the tunnel and compresses the nerve."
+        },
+        {
+          "q": "What is the mechanism of thenar muscle wasting?",
+          "a": "Chronic median nerve compression leads to axonal loss, which causes muscle denervation. The denervated muscle fibers lose neural trophic support, atrophy, and are eventually replaced by fibrofatty tissue."
+        }
+      ],
+      "pearl": "Always test sensation over the thenar eminence! If it is numb, the median nerve lesion is PROXIMAL to the carpal tunnel (e.g., pronator teres syndrome). If it is intact, it is Carpal Tunnel Syndrome."
+    }
+  ]
+}
