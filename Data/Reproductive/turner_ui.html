@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBL-1 Reproductive | Turner Syndrome</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg: #0d0f14;
+  --surface: #14171f;
+  --border: #252a35;
+  --accent: #e63946; 
+  --accent2: #457b9d;
+  --warn: #f4a261;
+  --danger: #e63946;
+  --success: #06d6a0;
+  --text: #d4d8e8;
+  --muted: #6b7280;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+header p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+nav {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 24px;
+}
+
+nav::-webkit-scrollbar { display: none; }
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 13px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav button.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+nav button:hover { color: var(--text); }
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+section { display: none; }
+section.active { display: block; }
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  font-family: var(--mono);
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--mono);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+/* Accordion */
+.accordion {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.accordion-head {
+  padding: 14px 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.accordion-head:hover { background: #1c2030; }
+
+.accordion-head .arrow {
+  font-size: 11px;
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+
+.accordion.open .accordion-head .arrow { transform: rotate(180deg); }
+
+.accordion-body {
+  display: none;
+  padding: 0 18px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.accordion.open .accordion-body { display: block; }
+
+.accordion-body p { margin-top: 12px; }
+
+/* Feature tags */
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ft {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.ft-yes { color: var(--success); border-color: var(--success); background: rgba(6,214,160,0.08); }
+.ft-no { color: var(--danger); border-color: var(--danger); background: rgba(230,57,70,0.08); }
+.ft-key { color: var(--accent2); border-color: var(--accent2); background: rgba(69,123,157,0.08); }
+.ft-warn { color: var(--warn); border-color: var(--warn); background: rgba(244,162,97,0.08); }
+
+/* Viva Q&A */
+.viva-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.viva-q {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  user-select: none;
+}
+
+.viva-q:hover { background: #1c2030; }
+
+.reveal-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: none;
+  padding: 3px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.viva-a {
+  display: none;
+  padding: 0 18px 16px;
+  font-size: 14px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.viva-a.shown { display: block; }
+.viva-a p { margin-top: 12px; }
+.viva-a ul { margin-top: 10px; padding-left: 18px; }
+.viva-a li { margin-bottom: 6px; }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+th {
+  background: #1c2030;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* Highlight boxes */
+.hl {
+  border-left: 3px solid;
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin: 14px 0;
+  font-size: 14px;
+}
+
+.hl-accent { border-color: var(--accent); background: rgba(230,57,70,0.08); }
+.hl-warn { border-color: var(--warn); background: rgba(244,162,97,0.08); }
+.hl-success { border-color: var(--success); background: rgba(6,214,160,0.08); }
+.hl-danger { border-color: var(--danger); background: rgba(230,57,70,0.08); }
+
+.hl strong { display: block; margin-bottom: 4px; font-size: 12px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Lab table */
+.lab-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.lab-row:last-child { border-bottom: none; }
+.lab-val { font-family: var(--mono); }
+.lab-val.abn { color: var(--warn); }
+.lab-val.crit { color: var(--danger); }
+.lab-val.norm { color: var(--success); }
+
+em { color: var(--accent2); font-style: italic; }
+
+ul.bullets { padding-left: 18px; margin-top: 8px; }
+ul.bullets li { margin-bottom: 6px; font-size: 14px; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* Pathway */
+.pathway-step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 8px;
+  align-items: flex-start;
+}
+
+.ps-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ps-body { font-size: 14px; }
+.ps-body strong { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+      <span class="tag">PBL-1</span>
+      <span class="tag" style="color:var(--accent2);border-color:var(--accent2)">REPRODUCTIVE</span>
+    </div>
+    [span_0](start_span)<h1>Disturbed Married Life — Turner Syndrome[span_0](end_span)</h1>
+    [span_1](start_span)<p>Ziauddin University · Reproductive System · Complete Study Guide[span_1](end_span)</p>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="showTab('case')">Case Summary</button>
+  <button onclick="showTab('diagnosis')">Diagnosis</button>
+  <button onclick="showTab('pathophysiology')">Pathophysiology</button>
+  <button onclick="showTab('investigations')">Investigations</button>
+  <button onclick="showTab('management')">Management</button>
+  <button onclick="showTab('viva')">Viva Q&A</button>
+  <button onclick="showTab('ethics')">Ethics & CHS</button>
+</nav>
+
+<main>
+
+  <section id="case" class="active">
+    <h2>Case Summary</h2>
+    [span_2](start_span)<p class="subtitle">Signs & Symptoms[span_2](end_span)</p>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Presenting Complaints</div>
+        <ul class="bullets">
+          [span_3](start_span)<li>Never bled vaginally (primary amenorrhea)[span_3](end_span)</li>
+          [span_4](start_span)<li>No breast development (Tanner I)[span_4](end_span)</li>
+          [span_5](start_span)<li>Married 4 years, no conception[span_5](end_span)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Physical Findings</div>
+        <ul class="bullets">
+          [span_6](start_span)<li>Short stature (4.5 ft)[span_6](end_span)</li>
+          [span_7](start_span)[span_8](start_span)<li>Webbed neck (pterygium colli)[span_7](end_span)[span_8](end_span)</li>
+          [span_9](start_span)<li>Widely spaced nipples, broad chest[span_9](end_span)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl hl-warn">
+      <strong>🔑 Clinical Presentation Pattern</strong>
+      [span_10](start_span)A combination of primary amenorrhea, absent secondary sexual characteristics, and short stature in a phenotypic female is highly suspicious for gonadal dysgenesis[span_10](end_span).
+    </div>
+
+    <div class="card">
+      <div class="card-title">Other Specific Findings</div>
+      [span_11](start_span)<div class="lab-row"><span>Puffed hands and small toes</span><span class="lab-val abn">Lymphedema[span_11](end_span)</span></div>
+      [span_12](start_span)<div class="lab-row"><span>Increased carrying angle</span><span class="lab-val abn">Cubitus valgus[span_12](end_span)</span></div>
+      [span_13](start_span)[span_14](start_span)<div class="lab-row"><span>Excessive nevi</span><span class="lab-val abn">Melanocyte proliferation[span_13](end_span)[span_14](end_span)</span></div>
+    </div>
+  </section>
+
+  <section id="diagnosis">
+    <h2>Diagnosis</h2>
+    [span_15](start_span)<p class="subtitle">Turner Syndrome (45,X)[span_15](end_span)</p>
+
+    <div class="hl hl-danger">
+      [span_16](start_span)<strong>Primary Diagnosis[span_16](end_span)</strong>
+      [span_17](start_span)Turner Syndrome — a chromosomal disorder in phenotypic females caused by complete or partial absence of one X chromosome (45,X or 45,XO)[span_17](end_span).
+    </div>
+
+    <div class="card">
+      <div class="card-title">Diagnostic Criteria Met</div>
+      <div class="feature-row">
+        [span_18](start_span)<span class="ft ft-yes">Primary Amenorrhea ✓[span_18](end_span)</span>
+        [span_19](start_span)<span class="ft ft-yes">Short Stature ✓[span_19](end_span)</span>
+        [span_20](start_span)<span class="ft ft-yes">Streak Ovaries ✓[span_20](end_span)</span>
+        [span_21](start_span)<span class="ft ft-yes">High FSH/LH ✓[span_21](end_span)</span>
+        [span_22](start_span)<span class="ft ft-yes">Low Estradiol ✓[span_22](end_span)</span>
+        [span_23](start_span)<span class="ft ft-no">Barr Body Absent ✗[span_23](end_span)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      [span_24](start_span)<div class="card-title">Mnemonic — Turner's WEBBING[span_24](end_span)</div>
+      <ul class="bullets">
+        [span_25](start_span)<li><strong>W</strong> – Webbed neck[span_25](end_span)</li>
+        [span_26](start_span)<li><strong>E</strong> – Estrogen deficiency (no puberty, amenorrhea)[span_26](end_span)</li>
+        [span_27](start_span)<li><strong>B</strong> – Broad chest / shield chest[span_27](end_span)</li>
+        [span_28](start_span)<li><strong>B</strong> – Barr body absent[span_28](end_span)</li>
+        [span_29](start_span)<li><strong>I</strong> – Infertility (streak gonads)[span_29](end_span)</li>
+        [span_30](start_span)<li><strong>N</strong> – Nevi (excessive)[span_30](end_span)</li>
+        [span_31](start_span)<li><strong>G</strong> – Gonadotropins HIGH (FSH, LH elevated)[span_31](end_span)</li>
+      </ul>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-head" onclick="toggleAcc(this)">
+        [span_32](start_span)Systemic Associations (Risks to Counsel About)[span_32](end_span)
+        <span class="arrow">▼</span>
+      </div>
+      <div class="accordion-body">
+        <ul class="bullets">
+          [span_33](start_span)<li><strong>Cardiovascular:</strong> Bicuspid aortic valve, coarctation of aorta, aortic dissection (most serious — regular echo needed)[span_33](end_span)</li>
+          [span_34](start_span)<li><strong>Renal:</strong> Horseshoe kidney, duplicated collecting system (USS of kidneys recommended)[span_34](end_span)</li>
+          [span_35](start_span)<li><strong>Hearing:</strong> Sensorineural hearing loss[span_35](end_span)</li>
+          [span_36](start_span)<li><strong>Ophthalmic:</strong> Strabismus, amblyopia, ptosis[span_36](end_span)</li>
+          [span_37](start_span)<li><strong>Thyroid:</strong> Autoimmune hypothyroidism (Hashimoto's) — check TSH annually[span_37](end_span)</li>
+          [span_38](start_span)<li><strong>Metabolic:</strong> Insulin resistance, type 2 DM risk[span_38](end_span)</li>
+          [span_39](start_span)<li><strong>Bone:</strong> Osteoporosis (low estrogen → low bone density) — hence Calcium + Vit D[span_39](end_span)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pathophysiology">
+    <h2>Pathophysiology</h2>
+    [span_40](start_span)<p class="subtitle">Why It All Happens[span_40](end_span)</p>
+
+    <div class="card">
+      [span_41](start_span)<div class="card-title">The Core Problem: 45,X Karyotype[span_41](end_span)</div>
+      [span_42](start_span)<div class="pathway-step"><div class="ps-num">1</div><div class="ps-body"><strong>Monosomy X (45,X)</strong> — usually due to non-disjunction in paternal meiosis[span_42](end_span)</div></div>
+      [span_43](start_span)<div class="pathway-step"><div class="ps-num">2</div><div class="ps-body"><strong>SHOX gene haploinsufficiency</strong> → short stature, cubitus valgus, Madelung deformity[span_43](end_span)</div></div>
+      [span_44](start_span)<div class="pathway-step"><div class="ps-num">3</div><div class="ps-body">Two X chromosomes needed for oocyte survival → <strong>accelerated oocyte atresia</strong> begins in fetal life[span_44](end_span)</div></div>
+      [span_45](start_span)<div class="pathway-step"><div class="ps-num">4</div><div class="ps-body">By puberty: <strong>streak ovaries</strong> (only fibrous stroma remains) → no estrogen production[span_45](end_span)</div></div>
+      [span_46](start_span)<div class="pathway-step"><div class="ps-num">5</div><div class="ps-body">No estrogen → <strong>No puberty</strong> (no thelarche, no menarche)[span_46](end_span)</div></div>
+      [span_47](start_span)<div class="pathway-step"><div class="ps-num">6</div><div class="ps-body">No estrogen → No negative feedback → <strong>FSH & LH rise markedly</strong>[span_47](end_span)</div></div>
+      [span_48](start_span)<div class="pathway-step"><div class="ps-num">7</div><div class="ps-body">Result: <strong>Hypergonadotropic Hypogonadism</strong>[span_48](end_span)</div></div>
+    </div>
+
+    <div class="card">
+      [span_49](start_span)<div class="card-title">HPG Axis in Turner Syndrome vs Normal[span_49](end_span)</div>
+      <table>
+        [span_50](start_span)<tr><th>Step[span_50](end_span)[span_51](start_span)</th><th>Normal Female[span_51](end_span)[span_52](start_span)</th><th>Turner Syndrome[span_52](end_span)</th></tr>
+        [span_53](start_span)<tr><td>Hypothalamus[span_53](end_span)[span_54](start_span)</td><td>GnRH pulsatile release[span_54](end_span)[span_55](start_span)</td><td>GnRH pulsatile release (normal)[span_55](end_span)</td></tr>
+        [span_56](start_span)<tr><td>Pituitary[span_56](end_span)[span_57](start_span)</td><td>FSH & LH release[span_57](end_span)[span_58](start_span)</td><td>FSH & LH elevated (no feedback)[span_58](end_span)</td></tr>
+        [span_59](start_span)<tr><td>Ovary[span_59](end_span)[span_60](start_span)</td><td>Follicle development + Estradiol[span_60](end_span)[span_61](start_span)</td><td>Streak ovary — NO response, NO estradiol[span_61](end_span)</td></tr>
+        [span_62](start_span)<tr><td>Feedback[span_62](end_span)[span_63](start_span)</td><td>Estradiol → negative feedback[span_63](end_span)[span_64](start_span)</td><td>NO estradiol → NO feedback → FSH/LH rise[span_64](end_span)</td></tr>
+      </table>
+    </div>
+
+    <div class="hl hl-accent">
+      [span_65](start_span)<strong>Why is the uterus present?[span_65](end_span)</strong>
+      [span_66](start_span)In normal male development, the testes produce Müllerian Inhibiting Factor (MIF)[span_66](end_span). [span_67](start_span)[span_68](start_span)In Turner syndrome, there are no functional gonads → No MIF → Müllerian ducts develop normally into the uterus, fallopian tubes, and upper vagina[span_67](end_span)[span_68](end_span).
+    </div>
+  </section>
+
+  <section id="investigations">
+    <h2>Investigations</h2>
+    [span_69](start_span)<p class="subtitle">Lab Interpretation & Barr Body[span_69](end_span)</p>
+
+    <div class="card">
+      [span_70](start_span)<div class="card-title">Hormonal Profile & Labs[span_70](end_span)</div>
+      [span_71](start_span)<div class="lab-row"><span>Serum FSH</span><span class="lab-val crit">68.28 mIU/L (High)[span_71](end_span)</span></div>
+      [span_72](start_span)<div class="lab-row"><span>Serum LH</span><span class="lab-val crit">35.50 mIU/L (High)[span_72](end_span)</span></div>
+      [span_73](start_span)<div class="lab-row"><span>Serum Estradiol</span><span class="lab-val crit">6.8 pg/mL (Low)[span_73](end_span)</span></div>
+      [span_74](start_span)<div class="lab-row"><span>Serum Vit D3</span><span class="lab-val abn">19 ng/mL (Insufficient)[span_74](end_span)</span></div>
+      [span_75](start_span)<div class="lab-row"><span>Serum BHCG</span><span class="lab-val norm">1.8 mIU/L (Normal/Not pregnant)[span_75](end_span)</span></div>
+      
+      <div class="hl hl-danger" style="margin-top:12px;">
+        [span_76](start_span)<strong>Key Pattern to Recognize[span_76](end_span)</strong>
+        [span_77](start_span)HIGH FSH + HIGH LH + VERY LOW Estradiol = Hypergonadotropic Hypogonadism = Primary Ovarian Failure[span_77](end_span). [span_78](start_span)The pituitary is working hard but the ovaries cannot respond[span_78](end_span).
+      </div>
+    </div>
+
+    <div class="card">
+      [span_79](start_span)<div class="card-title">Barr Body Analysis[span_79](end_span)</div>
+      [span_80](start_span)<p style="font-size:14px;margin-top:8px;">A Barr body (sex chromatin body) is the inactivated, condensed X chromosome visible in somatic cells[span_80](end_span).</p>
+      <ul class="bullets">
+        [span_81](start_span)<li>Based on the <strong>Lyon Hypothesis</strong>: Inactivation is random and occurs early in embryonic development[span_81](end_span).</li>
+        [span_82](start_span)<li><strong>Formula:</strong> Number of Barr bodies = Number of X chromosomes − 1[span_82](end_span).</li>
+        [span_83](start_span)<li><strong>This Patient:</strong> 45,X → 1 X chromosome − 1 = <strong>0 Barr Bodies (Absent)</strong>[span_83](end_span).</li>
+      </ul>
+      <div class="hl hl-success" style="margin-top:12px;">
+        [span_84](start_span)<strong>Clinical Utility[span_84](end_span)</strong>
+        [span_85](start_span)Buccal mucosal scraping sent for analysis confirms the absence of a Barr body, confirming the 45,X karyotype[span_85](end_span). [span_86](start_span)It is a quick, cheap screening test in resource-limited settings[span_86](end_span).
+      </div>
+    </div>
+  </section>
+
+  <section id="management">
+    <h2>Management</h2>
+    [span_87](start_span)[span_88](start_span)<p class="subtitle">HRT Rationale — Treatment Explained[span_87](end_span)[span_88](end_span)</p>
+
+    <div class="card">
+      [span_89](start_span)<div class="card-title">Goals of HRT in Turner Syndrome[span_89](end_span)</div>
+      <ul class="bullets">
+        [span_90](start_span)<li>Induce puberty & secondary sexual characteristics[span_90](end_span)</li>
+        [span_91](start_span)<li>Establish withdrawal bleeds for psychological wellbeing[span_91](end_span)</li>
+        [span_92](start_span)<li>Protect bone density and cardiovascular health[span_92](end_span)</li>
+        [span_93](start_span)<li><em>Note: HRT is NOT for fertility (streak ovaries cannot produce eggs)[span_93](end_span)</em></li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        [span_94](start_span)<div class="card-title">Ethinyl Estradiol 0.3mg/day[span_94](end_span)</div>
+        [span_95](start_span)<p style="font-size:14px;margin-top:6px;"><strong>Role:</strong> Estrogen replacement[span_95](end_span)</p>
+        <ul class="bullets" style="margin-top:8px;">
+          [span_96](start_span)<li>Started at a LOW dose to mimic natural puberty onset[span_96](end_span).</li>
+          [span_97](start_span)<li>Induces breast development and stimulates endometrial growth[span_97](end_span).</li>
+          [span_98](start_span)<li>Low dose avoids premature epiphyseal fusion[span_98](end_span).</li>
+        </ul>
+      </div>
+      <div class="card">
+        [span_99](start_span)<div class="card-title">Medroxyprogesterone 10mg[span_99](end_span)</div>
+        [span_100](start_span)<p style="font-size:14px;margin-top:6px;"><strong>Role:</strong> Progestogen protection[span_100](end_span)</p>
+        <ul class="bullets" style="margin-top:8px;">
+          [span_101](start_span)<li>Given days 13–21 of cycle (sequential)[span_101](end_span).</li>
+          [span_102](start_span)<li>Unopposed estrogen causes endometrial hyperplasia (cancer risk)[span_102](end_span).</li>
+          [span_103](start_span)<li>Induces a withdrawal bleed to shed the endometrium[span_103](end_span).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hl hl-warn">
+      [span_104](start_span)<strong>Why Sequential and Not Continuous?[span_104](end_span)</strong>
+      [span_105](start_span)Sequential HRT mimics the natural menstrual cycle pattern (estrogen daily, progestogen for part of the cycle), inducing a withdrawal bleed[span_105](end_span). [span_106](start_span)Continuous HRT would not cause a bleed and is reserved for postmenopausal women[span_106](end_span).
+    </div>
+  </section>
+
+  <section id="viva">
+    <h2>Viva Q&A</h2>
+    [span_107](start_span)[span_108](start_span)<p class="subtitle">High-Yield Exam Preparation[span_107](end_span)[span_108](end_span)</p>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        What is the diagnosis in this case? [span_109](start_span)Give reasons.[span_109](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>Turner Syndrome (45,X). [span_110](start_span)Key evidence: Primary amenorrhea, short stature, webbed neck, shield chest, cubitus valgus, streak ovaries on USS, very high FSH & LH (hypergonadotropic hypogonadism), very low estradiol, absent Barr body on buccal smear.[span_110](end_span)</p>
+      </div>
+    </div>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        [span_111](start_span)Why are FSH and LH elevated in this patient?[span_111](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>Streak ovaries produce no estrogen. Estrogen normally exerts negative feedback on the hypothalamus and anterior pituitary. [span_112](start_span)Without estrogen, there is no negative feedback → GnRH keeps being released → FSH and LH remain elevated (hypergonadotropic state).[span_112](end_span)</p>
+      </div>
+    </div>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        [span_113](start_span)What is a Barr body and what is its significance here?[span_113](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>A Barr body is the inactivated X chromosome (heterochromatin) visible at the periphery of the nucleus. Number of Barr bodies = Number of X chromosomes − 1. In Turner syndrome (45,X): only one X → no inactivation needed → 0 Barr bodies. [span_114](start_span)Absent Barr body confirms 45,X karyotype.[span_114](end_span)</p>
+      </div>
+    </div>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        [span_115](start_span)Why is the uterus present if she has no functional ovaries?[span_115](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>The uterus is derived from Müllerian ducts. Müllerian ducts regress only in the presence of Müllerian Inhibiting Factor (MIF/AMH) secreted by fetal testes. [span_116](start_span)In Turner syndrome, there are no functional testes → no MIF → Müllerian ducts develop normally → uterus and fallopian tubes are present.[span_116](end_span)</p>
+      </div>
+    </div>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        [span_117](start_span)[span_118](start_span)What is the rationale for prescribing Ethinyl Estradiol and Progesterone?[span_117](end_span)[span_118](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>Ethinyl Estradiol replaces absent ovarian estrogen. [span_119](start_span)It induces secondary sexual characteristics, stimulates endometrial proliferation, and protects bone density[span_119](end_span). Unopposed estrogen causes endometrial hyperplasia, which can progress to cancer. [span_120](start_span)Progesterone is added sequentially to shed the endometrium (withdrawal bleed), protecting against this risk[span_120](end_span).</p>
+      </div>
+    </div>
+
+    <div class="viva-item">
+      <div class="viva-q" onclick="toggleViva(this)">
+        [span_121](start_span)What is the SHOX gene and its role in Turner syndrome?[span_121](end_span)
+        <button class="reveal-btn">REVEAL</button>
+      </div>
+      <div class="viva-a">
+        <p>SHOX (Short Stature Homeobox) gene is located on the pseudoautosomal region of the X chromosome. It regulates skeletal growth. [span_122](start_span)In Turner syndrome (only one X), SHOX haploinsufficiency causes short stature and skeletal anomalies (cubitus valgus, Madelung deformity).[span_122](end_span)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ethics">
+    <h2>Ethics & CHS</h2>
+    [span_123](start_span)[span_124](start_span)<p class="subtitle">Confidentiality & Counselling[span_123](end_span)[span_124](end_span)</p>
+
+    <div class="card">
+      [span_125](start_span)<div class="card-title">Issue 1: Confidentiality vs Spousal Rights[span_125](end_span)</div>
+      [span_126](start_span)<p style="font-size:14px;margin-top:8px;">The patient requested not to reveal her problem to anyone[span_126](end_span).</p>
+      <ul class="bullets">
+        [span_127](start_span)<li><strong>Autonomy:</strong> The patient has full right to control her own health information[span_127](end_span).</li>
+        [span_128](start_span)<li><strong>Ethical Tension:</strong> The husband is also a stakeholder; his reproductive decisions are affected[span_128](end_span).</li>
+        [span_129](start_span)<li><strong>Resolution:</strong> Respect confidentiality, but discuss with the patient why disclosure to her husband is important and seek her consent[span_129](end_span).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      [span_130](start_span)<div class="card-title">Issue 2: Infertility Counselling[span_130](end_span)</div>
+      <ul class="bullets">
+        [span_131](start_span)<li>Explain clearly that streak ovaries cannot produce eggs; biological pregnancy is not possible[span_131](end_span).</li>
+        [span_132](start_span)<li>Discuss options such as adoption or surrogacy with a donor egg[span_132](end_span).</li>
+        [span_133](start_span)<li>Ensure the patient understands that HRT will develop secondary characteristics but will not restore fertility[span_133](end_span).</li>
+      </ul>
+    </div>
+
+    <div class="hl hl-success">
+      [span_134](start_span)<strong>Rural & Sociocultural Context (CHS Angle)[span_134](end_span)</strong>
+      [span_135](start_span)[span_136](start_span)The case deliberately sets this in rural Sindh, where traditional birth attendants (Dais) are trusted and approached first[span_135](end_span)[span_136](end_span). [span_137](start_span)This reflects healthcare-seeking behavior in rural Pakistan, causing delayed presentations (4 years of infertility before a hospital visit)[span_137](end_span).
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    
+    const tabs = ['case', 'diagnosis', 'pathophysiology', 'investigations', 'management', 'viva', 'ethics'];
+    const activeIndex = tabs.indexOf(id);
+    if(activeIndex !== -1) {
+      document.querySelectorAll('nav button')[activeIndex].classList.add('active');
+    }
+  }
+
+  function toggleAcc(head) {
+    head.parentElement.classList.toggle('open');
+  }
+
+  function toggleViva(q) {
+    const a = q.nextElementSibling;
+    a.classList.toggle('shown');
+    const btn = q.querySelector('.reveal-btn');
+    btn.textContent = a.classList.contains('shown') ? 'HIDE' : 'REVEAL';
+  }
+</script>
+
+</body>
+</html>
