@@ -1,0 +1,116 @@
+{
+  "pbls": [
+    {
+      "title": "Case 1: The Wrist in a Twist (Colles' Fracture)",
+      "details": {
+        "Clinical & Exam": [
+          "45F, FOOSH injury on wet floor (axial compressive force)",
+          "Swelling, bruising, tenderness over left wrist",
+          "Weak grip & inability to flex wrist/oppose thumb",
+          "Sensation intact over palmar hand (no complete transection)",
+          "Radial pulse palpable (artery not compromised)"
+        ],
+        "Vitals & Labs": [
+          "Pulse: 110 bpm (pain-induced sympathetic surge)",
+          "Temp: 99°F, RR: 20/min (inflammatory response)",
+          "WBC: 11 × 10⁹/L, Neutrophils: 75% (trauma response)",
+          "Vitamin D: 10 ng/mL (Severely Deficient, < 20 ng/mL)",
+          "X-Ray: Distal radius fracture with dorsal displacement"
+        ],
+        "Management": [
+          "Inj. Tramadol 30mg + Metaclon 10mg IV in saline",
+          "Inj. Diclofenac Sodium 75mg IM (rapid COX inhibition)",
+          "Inj. Vit D3 600,000 IU IM stat (depot replenishment)",
+          "Soft board splinting -> Orthopedic referral for reduction",
+          "Discharge: Diclofenac, Omeprazole, Holick's Vit D Protocol"
+        ]
+      },
+      "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#4A90D9\", fontcolor=white]; FOOSH [label=\"FOOSH Mechanism\\n(Axial Compressive Force)\"]; WeakMetaphysis [label=\"Distal Radius Metaphysis\\n(Weakened by Low Vit D)\"]; Fracture [label=\"Colles' Fracture\"]; Deformity [label=\"Dorsal Displacement\\n(Dinner-fork deformity)\"]; Complication [label=\"Acute Carpal Tunnel Syndrome\\n(Median Nerve Compression)\"]; FOOSH -> WeakMetaphysis; WeakMetaphysis -> Fracture; Fracture -> Deformity; Fracture -> Complication; }",
+      "viva": [
+        {
+          "q": "What are the other types of distal radius/wrist fractures?",
+          "a": "**Colles':** Dorsal displacement (Dinner-fork deformity).\n**Smith's:** Volar displacement (Garden spade deformity) from fall on flexed wrist.\n**Barton's:** Intra-articular fracture with radiocarpal subluxation.\n**Chauffeur's (Hutchinson's):** Radial styloid fracture.\n**Scaphoid:** Pain in anatomical snuffbox; high risk of avascular necrosis due to retrograde blood supply."
+        },
+        {
+          "q": "What are the 3 stages of fracture healing?",
+          "a": "**1. Reactive Phase (Days 1–5):** Fracture hematoma forms a fibrin scaffold. Macrophages/neutrophils infiltrate. Granulation tissue forms.\n**2. Reparative Phase (Weeks 1–6):** Soft Callus forms (fibrocartilage from chondroblasts), followed by Hard Callus (endochondral ossification into woven bone).\n**3. Remodeling Phase (Months-Years):** Woven bone replaced by lamellar bone via coupled osteoblast/osteoclast activity. Guided by mechanical stress (Wolff's Law)."
+        },
+        {
+          "q": "Explain the bone biochemistry of Osteoblasts, Osteoclasts, and Vitamin D.",
+          "a": "**Osteoblasts (Formation):** Derived from mesenchymal stem cells. Synthesize Type I collagen (osteoid) and express Alkaline Phosphatase (ALP) to promote hydroxyapatite crystallization. Secretes OPG.\n**Osteoclasts (Resorption):** Macrophage lineage. Form an acidified lacuna (via carbonic anhydrase II) and secrete cathepsin K to degrade collagen. Activated by RANK-L.\n**Vitamin D Axis:** Sunlight -> 7-dehydrocholesterol -> Vit D3 -> 25-OH Vit D (liver) -> 1,25-(OH)2 Calcitriol (kidney). Increases gut/renal calcium absorption. Deficiency causes secondary hyperparathyroidism."
+        },
+        {
+          "q": "Detail the pharmacology of the ER and discharge medications used here.",
+          "a": "**NSAIDs (Diclofenac):** Non-selective COX-1/COX-2 inhibitors. Decreases prostaglandins. Adverse: GI ulcers (inhibits protective PGE2), renal AKI, platelet dysfunction.\n**Omeprazole:** PPI given to protect against NSAID-induced ulcers.\n**Tramadol:** Weak μ-opioid agonist + central SNRI.\n**Metoclopramide:** D2 / 5-HT3 antagonist. Prevents opioid-induced emesis. Adverse: EPS, hyperprolactinemia."
+        },
+        {
+          "q": "What are the complications of a Colles' fracture?",
+          "a": "1. **Acute Carpal Tunnel Syndrome:** Hematoma compresses median nerve.\n2. **Malunion:** Heals in malalignment.\n3. **Sudeck's Atrophy (CRPS Type I):** Burning pain, vasomotor instability, regional osteoporosis.\n4. **EPL Rupture:** Extensor pollicis longus tendon tears at Lister's tubercle.\n5. **Post-traumatic Osteoarthritis.**"
+        },
+        {
+          "q": "What are the relevant Community Health Sciences (CHS) and Ethical points?",
+          "a": "**Ethics (Consent):** Must include Disclosure, Comprehension, Voluntariness, and Competence. \n**CHS (Osteoporosis & Falls):** Peri-menopausal women (like this 45F) lose estrogen, reducing OPG and increasing osteoclast activity. She should get a DEXA scan (T-score <= -2.5 = Osteoporosis). \n**CHS (Vit D in Pakistan):** High prevalence due to covered clothing, indoor lifestyle, and melanin blocking UVB. Holick's protocol is necessary for rapid replenishment."
+        }
+      ],
+      "pearl": "COLLES = Dorsal displacement. SMITH'S = Volar displacement. Always prescribe a PPI (Omeprazole) when giving an elderly/at-risk patient a course of NSAIDs for fracture pain."
+    },
+    {
+      "title": "Case 2: The Painful Price of Catching Yourself (Humerus Shaft Fracture)",
+      "details": {
+        "Clinical & Exam": [
+          "35M, Assault with blunt object + fall",
+          "Tenting in mid-arm region (displaced fragments)",
+          "Wrist drop (unable to extend wrist/fingers)",
+          "Numbness over dorsal surface of 1st web space",
+          "Radial pulse palpable (Brachial artery intact)"
+        ],
+        "Vitals & Labs": [
+          "Pulse: 115 bpm, BP: 135/80 (Pain/stress response)",
+          "RR: 22/min (Monitor for Fat Embolism Syndrome)",
+          "WBC: 11 × 10⁹/L (Trauma-induced leukocytosis)",
+          "Hb: 14 g/dL, Platelets: 260 × 10⁹/L (Normal)",
+          "X-Ray: Transverse/spiral mid-shaft humerus fracture"
+        ],
+        "Management": [
+          "Splint (shoulder & arm immobilization)",
+          "Admission for surgery (ORIF plate and screws)",
+          "Tab. Diclofenac 50mg BD × 7 days",
+          "Tab. Paracetamol 1g TDS × 7 days (Multimodal)",
+          "Tab. Methylcobalamin 1 TDS (Nerve regeneration)"
+        ]
+      },
+      "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#E05C5C\", fontcolor=white]; Trauma [label=\"High-Energy Blunt Trauma\"]; Fracture [label=\"Mid-Shaft Humerus Fracture\\n(Holstein-Lewis Pattern)\"]; Nerve [label=\"Radial Nerve Compression\\nat Spiral Groove\"]; Motor [label=\"Loss of Wrist & Finger Extensors\\n(Wrist Drop)\"]; Sensory [label=\"Loss of Sensation in\\nDorsal 1st Web Space\"]; Trauma -> Fracture; Fracture -> Nerve; Nerve -> Motor; Nerve -> Sensory; }",
+      "viva": [
+        {
+          "q": "How does Radial Nerve injury present at different levels?",
+          "a": "**1. Axilla (Crutch palsy/Dislocation):** Triceps lost (elbow extension lost) + wrist drop + finger drop + broad posterior sensory loss.\n**2. Spiral Groove (Mid-shaft fracture):** Wrist drop + finger drop + numbness of 1st web space. **Triceps is SPARED** because its nerve branch exits above the groove.\n**3. Lateral Epicondyle (PINS injury):** Finger drop only. Wrist extension preserved (ECRL branch is higher up). NO sensory loss."
+        },
+        {
+          "q": "What are the pharmacological mechanisms of Methylcobalamin and Paracetamol?",
+          "a": "**Methylcobalamin:** Active coenzyme of Vit B12. Promotes Schwann cell proliferation, axonal transport, and myelin synthesis (via methionine cycle) to repair the radial nerve neuropraxia.\n**Paracetamol:** Inhibits COX centrally (spinal cord) and endocannabinoid reuptake. Safest NSAID alternative. Adverse: Hepatotoxicity in overdose (NAPQI accumulation, treat with N-acetylcysteine)."
+        },
+        {
+          "q": "What is Fat Embolism Syndrome and how does it relate to this case?",
+          "a": "Fat globules from ruptured medullary fat cells of a long bone fracture enter the circulation, causing pulmonary and cerebral emboli within 24–72 hours.\n**Classic Triad:** Respiratory distress (hypoxia) + Neurological signs (confusion) + Petechial rash. The patient's RR of 22/min requires monitoring for this."
+        },
+        {
+          "q": "What are the potential complications of a mid-shaft humerus fracture?",
+          "a": "1. **Radial Nerve Palsy:** Usually neuropraxia; recovers in 3–4 months.\n2. **Non-union:** 2-5% rate due to distraction forces (e.g., hanging cast).\n3. **Infection (Osteomyelitis):** Especially post-ORIF. Staph aureus most common.\n4. **Brachial Artery Injury:** Rare, but an emergency.\n5. **Fat Embolism Syndrome.**"
+        },
+        {
+          "q": "Compare the fracture healing factors between Case 1 (45F) and Case 2 (35M).",
+          "a": "**Case 1 (45F):** Healing impaired by declining estrogen, severe Vitamin D deficiency (10 ng/mL), and metaphyseal location (though blood supply is good, bone quality is poor).\n**Case 2 (35M):** Faster healing expected. Young, normal nutrition, testosterone supports anabolism, diaphyseal cortical bone, and stable ORIF fixation."
+        },
+        {
+          "q": "Compare Median vs. Radial nerve injury patterns.",
+          "a": "**Median Nerve (C5-T1):** Injured in CTS/Supracondylar fractures. Motor loss: LOAF muscles (Thenar wasting, ape thumb, pointing index). Sensory loss: Palmar lateral 3.5 digits.\n**Radial Nerve (C5-T1):** Injured in Mid-shaft fractures. Motor loss: Extensors (Wrist drop). Sensory loss: Dorsal lateral hand and 1st web space."
+        },
+        {
+          "q": "What are the CHS and Pre-hospital care points for this assault victim?",
+          "a": "**ATLS Principles:** Airway, Breathing, Circulation first before fracture manipulation. \n**Street Crime:** Significant source of blunt force orthopedic trauma in urban centers.\n**Consent in Emergency:** If a patient is unconscious from trauma, the 'emergency exception' waives consent to treat life-threatening injuries. Since this patient is conscious, standard disclosure rules apply."
+        }
+      ],
+      "pearl": "In radial nerve injuries at the spiral groove (Holstein-Lewis fractures), the TRICEPS is spared. Always monitor long-bone fractures for the Fat Embolism Triad (Hypoxia, Confusion, Petechiae)."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "PBL 1 – Generalized Weakness (Myasthenia Gravis)",
+  "details": {
+    "Clinical Presentation": [
+      "25F, School Teacher",
+      "Fatigable bilateral ptosis & diplopia",
+      "Difficulty speaking and swallowing",
+      "Proximal limb weakness (waddling gait)",
+      "Pupil reflexes normal (spared)"
+    ],
+    "Investigations & Labs": [
+      "Edrophonium (Tensilon) test positive",
+      "Decremental response on RNS (>10% drop)",
+      "Anti-AChR Ab: 7.50 nmol/L (Highly elevated)",
+      "Normal Anti-MuSK & ANA",
+      "Mild microcytic hypochromic anemia (Hb 11 g/dL)"
+    ],
+    "Management Plan": [
+      "Pyridostigmine 60mg TID (AChE inhibitor)",
+      "Prednisone 15mg (Immunosuppression)",
+      "CT Thorax to screen for thymoma",
+      "Avoid: Fluoroquinolones, Aminoglycosides, Beta-blockers"
+    ]
+  },
+  "diagram": "digraph G { rankdir=TD; node [shape=box, style=filled, fillcolor=\"#7c6af7\", fontcolor=white]; Thymus [label=\"Autoimmune Trigger\\n(Thymus Abnormalities)\"]; Antibodies [label=\"Anti-AChR IgG Antibodies\"]; NMJ_Attack [label=\"NMJ Destruction\\n(Direct Block + Complement)\"]; Decreased_AChR [label=\"Decreased Nicotinic AChR Density\"]; Fatigable [label=\"Transmission Failure\\n(Fatigable Weakness)\"]; Thymus -> Antibodies; Antibodies -> NMJ_Attack; NMJ_Attack -> Decreased_AChR; Decreased_AChR -> Fatigable; }",
+  "viva": [
+    {
+      "q": "What is the pathogenesis of Myasthenia Gravis?",
+      "a": "MG is an autoimmune disorder where IgG autoantibodies target nicotinic AChRs at the motor endplate. The autoantibodies cause blockade of the ACh binding site, complement-mediated destruction of the endplate, and accelerated degradation of AChRs, leading to a reduced safety margin of NMJ transmission."
+    },
+    {
+      "q": "How does pyridostigmine work? How does it differ from edrophonium?",
+      "a": "Both are acetylcholinesterase inhibitors. Pyridostigmine is longer-acting (4–6 hours) and used orally for chronic symptomatic therapy. Edrophonium is ultra-short acting (2–10 min) and used IV strictly for diagnostic purposes (Tensilon test). Neither alters the underlying autoimmune process."
+    },
+    {
+      "q": "Why is the pupil spared in MG but affected in 3rd nerve palsy?",
+      "a": "The pupillary sphincter is innervated by parasympathetic fibers via CN III using muscarinic receptors. MG strictly targets nicotinic AChRs at the neuromuscular junction of skeletal muscle, leaving smooth muscle and autonomic function unaffected."
+    },
+    {
+      "q": "Explain the decremental response in MG on RNS.",
+      "a": "With repeated stimulation, normal ACh stores deplete slightly. In a normal NMJ, this doesn't matter. In MG, due to reduced AChR density, this normal depletion drops the endplate potential (EPP) below the threshold for muscle firing, resulting in a >10% amplitude reduction on low-frequency (3 Hz) stimulation."
+    },
+    {
+      "q": "What is the role of the thymus in MG?",
+      "a": "The thymus contains myoid cells that express AChR, potentially serving as the self-antigen trigger. ~75% of MG patients have thymic hyperplasia or a thymoma. Thymectomy is recommended to remove this autoimmune driver."
+    },
+    {
+      "q": "What is the significance of the antibiotic history in this case?",
+      "a": "Fluoroquinolones (like ciprofloxacin) and aminoglycosides block ACh release and impair NMJ transmission. The temporary worsening after her throat infection antibiotic was a classic drug-induced unmasking of subclinical MG."
+    },
+    {
+      "q": "Differentiate Myasthenic Crisis from Cholinergic Crisis.",
+      "a": "Myasthenic crisis is worsening MG causing respiratory failure; it improves with edrophonium. Cholinergic crisis is due to excess AChE inhibitors causing a depolarizing block; it worsens with edrophonium and features muscarinic signs like pinpoint pupils and excessive secretions (SLUDGE)."
+    },
+    {
+      "q": "Why is MG more common in young females but has a second peak in older males?",
+      "a": "MG has a bimodal distribution. In young women (20-40), it is tied to female autoimmune predisposition and thymic hyperplasia. In older men (60+), it is more frequently associated with thymomas."
+    }
+  ],
+  "pearl": "Classic Pattern: Fatigable weakness that worsens with activity and improves with rest. \n\nPupil sparing in ptosis = Think MG! The pupil uses muscarinic receptors, while MG attacks somatic nicotinic receptors."
+}
